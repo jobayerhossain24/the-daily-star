@@ -44,18 +44,7 @@ const Register = () => {
               required
             />
           </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Photo URL</span>
-            </label>
-            <input
-              type="text"
-              placeholder="Photo URL"
-              className="input input-bordered"
-              name="photo"
-              required
-            />
-          </div>
+
           <div className="form-control">
             <label className="label">
               <span className="label-text">Email</span>

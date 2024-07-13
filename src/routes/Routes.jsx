@@ -3,6 +3,7 @@ import Root from "../layouts/Root";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import News from "../pages/News/News";
+import NotFound from "../pages/NotFound/NotFound";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFound></NotFound>,
   },
 ]);
 

@@ -4,7 +4,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import Navbar from "../Shared/Navbar/Navbar";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, signInWithGoogle } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   console.log("location in the log in page", location);
@@ -20,6 +20,16 @@ const Login = () => {
         console.log(result.user);
         // navigate after login
         navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        console.log(result.user);
       })
       .catch((error) => {
         console.error(error);
@@ -71,6 +81,14 @@ const Login = () => {
           <Link className="text-blue-600 font-bold" to="/register">
             Register
           </Link>{" "}
+        </p>
+        <p className="my-4 text-center ">
+          <button
+            onClick={handleGoogleSignIn}
+            className="btn btn-success btn-wide text-red-600 text-xl"
+          >
+            Google
+          </button>
         </p>
       </div>
     </div>
